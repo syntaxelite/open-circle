@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-cream: #F8F6EF;
+  --color-sage: #315C50;
+  --color-sage-dark: #224239;
+  --color-sage-light: #3D7062;
+  --color-muted-olive: #78917B;
+  --color-muted-olive-dark: #5A705D;
+  --color-soft-green: #E4EEE6;
+  --color-soft-green-light: #F2F7F3;
+  --color-charcoal: #24352F;
+  --color-charcoal-muted: #536760;
+  --color-charcoal-light: #6E827B;
+  --color-warm-beige: #E8CDA2;
+  --color-warm-beige-light: #F7EFE1;
+  --color-border-subtle: #DDE5DF;
+  --color-border-cream: #E7E2D4;
+
+  --font-serif: var(--font-newsreader), Georgia, Cambria, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bg-cream: #F8F6EF;
+  --c-sage: #315C50;
+  --c-olive: #78917B;
+  --c-soft-green: #E4EEE6;
+  --c-charcoal: #24352F;
+  --c-beige: #E8CDA2;
+}
+
+/* Custom editorial styling */
+body {
+  background-color: #F8F6EF;
+  color: #24352F;
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-editorial {
+  font-family: var(--font-newsreader), Georgia, Cambria, serif;
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #315C50;
+  outline-offset: 3px;
+}
+
+/* Accessible reduced-motion handling */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth breathing ring animation */
+@keyframes breathingPulse {
+  0% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 0 rgba(49, 92, 80, 0.15);
+  }
+  50% {
+    transform: scale(1.16);
+    box-shadow: 0 0 45px 15px rgba(49, 92, 80, 0.12);
+  }
+  100% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 0 rgba(49, 92, 80, 0.15);
+  }
+}
+
+.animate-breathe {
+  animation: breathingPulse 8s ease-in-out infinite;
+}
+
+/* Custom scrollbar for pleasant reading */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F6EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D0DBD3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #78917B;
+}
