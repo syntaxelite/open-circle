@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Circle — Mental Health Awareness, Resources & Quiet Support</title>
+    <meta name="description" content="An open, calm mental health platform developed as a college project. Grounded in evidence-based guidance from WHO, NHS, NIMH, and India's Tele-MANAS initiative.">
+    <link rel="icon" th:href="@{/favicon.ico}" href="/favicon.ico">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Emergency Announcement Bar -->
+    <aside class="emergency-top-bar" aria-label="Urgent crisis helplines notice">
+        <span>In acute crisis? In India call Tele-MANAS <a href="tel:14416" class="helpline-link">14416</a> (24/7 Free) | In US/Canada dial <a href="tel:988" class="helpline-link">988</a></span>
+        <a href="#urgent-support" class="all-helpline-btn">View All Helplines &rarr;</a>
+    </aside>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a href="#hero" class="brand-link" aria-label="Open Circle Homepage">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="16" cy="16" r="11" stroke="#315C50" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="56 16"/>
+                        <path d="M23 10C24.5 7.5 27 7 27 7C27 7 26.5 9.5 24 11C23 11.6 22.3 11.2 23 10Z" fill="#78917B"/>
+                        <circle cx="16" cy="16" r="3" fill="#E8CDA2"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Open Circle</span>
+            </a>
+
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#learning-library">Learning Library</a></li>
+                    <li><a href="#support-directory">Support Directory</a></li>
+                    <li><a href="#mood-check-in">Mood Check-in</a></li>
+                    <li><a href="#breathing-space">Breathing Space</a></li>
+                    <li><a href="#about-sources">About &amp; Sources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#urgent-support" class="nav-btn-highlight">Get Help (24/7)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <div class="section-tag">
+                            <span class="dot"></span>
+                            Independent Mental Health Educational Project
+                        </div>
+                        <h1>A quiet, honest space for mental health <span class="italic-accent">understanding</span> and real support.</h1>
+                        <p class="hero-lead">
+                            Open Circle is a human-centered, college-developed resource dedicated to trustworthy guidance. Grounded in research from the World Health Organization, NHS, and NIMH, we provide evidence-based articles, a vetted support directory, private self-reflection, and direct connections to verified crisis lines.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#learning-library" class="btn btn-primary">
+                                <span>Explore Resources</span>
+                                <span>&rarr;</span>
+                            </a>
+                            <a href="#support-directory" class="btn btn-secondary">Find Support Directory</a>
+                            <a href="#urgent-support" class="btn btn-urgent">Get Help (24/7 Helplines)</a>
+                        </div>
+                        <div class="hero-trust-note">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Zero user tracking. Pure HTML/CSS. All medical &amp; support links are verified official portals.</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual-card">
+                        <svg class="botanical-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Botanical circle symbolizing growth and quiet healing">
+                            <circle cx="200" cy="200" r="160" fill="#F8F6EF" />
+                            <circle cx="200" cy="200" r="130" fill="#E4EEE6" opacity="0.6" />
+                            <circle cx="200" cy="200" r="105" stroke="#DDE5DF" stroke-width="2" stroke-dasharray="6 6" />
+                            <path d="M200 70 C 260 70, 310 120, 310 180 C 310 240, 260 290, 200 290 C 140 290, 90 240, 90 180 C 90 135, 120 100, 160 85" stroke="#315C50" stroke-width="4.5" stroke-linecap="round" />
+                            <circle cx="200" cy="70" r="12" fill="#E8CDA2" />
+                            <path d="M310 180 C 325 165, 345 165, 345 165 C 345 165, 345 185, 330 200 C 320 205, 312 200, 310 180 Z" fill="#78917B" />
+                            <path d="M135 245 C 120 255, 105 250, 105 250 C 105 250, 110 235, 125 225 C 135 220, 142 225, 135 245 Z" fill="#78917B" />
+                            <circle cx="200" cy="180" r="28" fill="#315C50" opacity="0.1" />
+                            <circle cx="200" cy="180" r="16" fill="#315C50" opacity="0.25" />
+                            <circle cx="200" cy="180" r="7" fill="#315C50" />
+                        </svg>
+                        <blockquote class="hero-visual-quote">&ldquo;Healing begins with permission to be where you are.&rdquo;</blockquote>
+                        <span class="hero-visual-cite">Open Circle Philosophy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Mental Health Learning Library -->
+        <section id="learning-library">
+            <div class="container">
+                <div class="section-tag">
+                    <span class="dot"></span>
+                    Evidence-Based Education
+                </div>
+                <h2 class="section-title">Mental Health Learning Library</h2>
+                <p class="section-subtitle">
+                    Accessible, thoughtfully researched explanations covering emotional well-being, stress, low mood, and interpersonal support. Each article is directly grounded in public guidance from the WHO, NHS, or NIMH.
+                </p>
+
+                <div class="disclaimer-banner">
+                    <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <div>
+                        <strong>Educational Notice:</strong> These articles provide general psychoeducation and are not intended as individual medical diagnoses. Always consult a licensed medical or psychological provider for clinical evaluations.
+                    </div>
+                </div>
+
+                <!-- Filters & Search Form -->
+                <div class="filter-bar">
+                    <div class="category-pills">
+                        <a th:each="cat : ${articleCategories}"
+                           th:href="@{/(category=${cat}, search=${search})} + '#learning-library'"
+                           th:text="${cat}"
+                           th:classappend="${selectedCategory == cat} ? 'active' : ''"
+                           class="pill-link">
+                            Category
+                        </a>
+                    </div>
+
+                    <form th:action="@{/#learning-library}" method="get" class="search-form">
+                        <input type="hidden" name="category" th:value="${selectedCategory}">
+                        <input type="text" name="search" th:value="${search}" placeholder="Search guides or topics..." class="search-input" aria-label="Search guides">
+                        <button type="submit" class="search-btn">Search</button>
+                        <a th:if="${!#strings.isEmpty(search)}" th:href="@{/(category='All')} + '#learning-library'" class="reset-link">Reset</a>
+                    </form>
+                </div>
+
+                <!-- Articles Grid -->
+                <div class="articles-grid">
+                    <article th:each="art : ${articles}" class="article-card">
+                        <div>
+                            <div class="article-meta">
+                                <span class="article-category-badge" th:text="${art.category}">Category</span>
+                                <span class="article-read-time" th:text="${art.readTime}">5 min read</span>
+                            </div>
+                            <h3 class="article-title" th:text="${art.title}">Article Title</h3>
+                            <p class="article-summary" th:text="${art.summary}">Article Summary</p>
+                            <div class="article-source-tag">
+                                <strong>Verified Source:</strong>
+                                <span th:text="${art.verifiedSource.publisher}">WHO</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <a th:href="@{'/articles/' + ${art.slug}}" class="read-guide-link">
+                                <span>Read Full Guide</span>
+                                <span>&rarr;</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Support Resource Directory -->
+        <section id="support-directory">
+            <div class="container">
+                <div class="section-tag">
+                    <span class="dot"></span>
+                    Vetted External Organizations
+                </div>
+                <h2 class="section-title">Support Resource Directory</h2>
+                <p class="section-subtitle">
+                    A curated index of legitimate support services, peer groups, and clinical navigators. We clearly distinguish peer emotional support from licensed clinical care so you can find the appropriate level of assistance.
+                </p>
+
+                <div class="disclaimer-banner">
+                    <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div>
+                        <strong>Important Clarity:</strong> Peer-support communities offer shared mutual connection and active listening; they are not a substitute for clinical diagnosis or therapy. For immediate crisis, please utilize the 24/7 helplines detailed in our Urgent Support section.
+                    </div>
+                </div>
+
+                <!-- Filters & Search Form -->
+                <div class="filter-bar">
+                    <div class="category-pills">
+                        <a th:each="dCat : ${dirCategories}"
+                           th:href="@{/(dirCategory=${dCat}, dirSupportType=${selectedDirSupportType}, dirSearch=${dirSearch})} + '#support-directory'"
+                           th:text="${dCat}"
+                           th:classappend="${selectedDirCategory == dCat} ? 'active' : ''"
+                           class="pill-link">
+                            Category
+                        </a>
+                    </div>
+
+                    <form th:action="@{/#support-directory}" method="get" class="search-form">
+                        <input type="hidden" name="dirCategory" th:value="${selectedDirCategory}">
+                        <input type="text" name="dirSearch" th:value="${dirSearch}" placeholder="Search organizations or regions..." class="search-input" aria-label="Search directory">
+                        <button type="submit" class="search-btn">Search</button>
+                        <a th:if="${!#strings.isEmpty(dirSearch)}" th:href="@{/(dirCategory='All')} + '#support-directory'" class="reset-link">Reset</a>
+                    </form>
+                </div>
+
+                <!-- Directory Grid -->
+                <div class="directory-grid">
+                    <div th:each="res : ${directoryResources}" class="directory-card">
+                        <div>
+                            <div class="dir-header">
+                                <div class="dir-badges">
+                                    <span class="badge"
+                                          th:classappend="${res.supportType == 'Peer Support'} ? 'badge-peer' : (${res.supportType == 'Clinical / Professional Care'} ? 'badge-clinical' : (${res.supportType == 'Helpline & Triage'} ? 'badge-helpline' : 'badge-info'))"
+                                          th:text="${res.supportType}">Support Type</span>
+                                    <span class="badge badge-info" th:text="${res.cost}">Cost</span>
+                                </div>
+                                <h3 class="dir-name" th:text="${res.name}">Organization Name</h3>
+                                <p class="dir-org" th:text="${res.organization}">Governing Organization</p>
+                            </div>
+                            <p class="dir-desc" th:text="${res.shortDescription}">Short description</p>
+
+                            <ul class="dir-details-list">
+                                <li th:each="item : ${res.verifiedDetails}" th:text="${item}">Detail</li>
+                            </ul>
+
+                            <div class="dir-meta-row">
+                                <span><strong>Region:</strong> <span th:text="${res.region}">India</span></span>
+                                <span><strong>Access:</strong> <span th:text="${res.accessMode}">Online</span></span>
+                            </div>
+                        </div>
+
+                        <div class="dir-action-row">
+                            <span th:if="${res.phone != null}" class="dir-phone" th:text="${res.phone}">14416</span>
+                            <span th:unless="${res.phone != null}"></span>
+                            <a th:href="${res.url}" target="_blank" rel="noopener noreferrer" class="dir-official-link">Visit Official Portal &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Private Mood Check-In -->
+        <section id="mood-check-in" class="mood-section">
+            <div class="container container-narrow">
+                <div style="text-align: center;">
+                    <div class="section-tag">
+                        <span class="dot"></span>
+                        Private Moment for Yourself
+                    </div>
+                    <h2 class="section-title">Private Mood Check-in</h2>
+                    <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+                        Pause for a moment without expectations. Select how things feel right now to receive a gentle, compassionate reflection and simple grounding suggestions.
+                    </p>
+
+                    <div class="disclaimer-banner" style="justify-content: center; text-align: left;">
+                        <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span><strong>100% Privacy &amp; Zero Tracking:</strong> Selections are non-diagnostic reflections. We never store, log, or transmit personal health data.</span>
+                    </div>
+                </div>
+
+                <!-- 5 Mood Selector Buttons -->
+                <div class="mood-selector-grid" role="group" aria-label="Select your current feeling">
+                    <a th:each="mEntry : ${moods}"
+                       th:href="@{/(mood=${mEntry.key})} + '#mood-check-in'"
+                       th:classappend="${selectedMood == mEntry.key} ? 'active' : ''"
+                       class="mood-option-btn">
+                        <span class="mood-btn-label" th:text="${mEntry.value.label}">Rough</span>
+                        <span class="mood-btn-hint" th:text="${mEntry.value.hint}">Heavy or struggling</span>
+                    </a>
+                </div>
+
+                <!-- Reflection Output Card -->
+                <div th:if="${currentMoodOption != null}" class="mood-reflection-card">
+                    <div class="mood-card-header">
+                        <div>
+                            <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: var(--color-muted-olive); letter-spacing: 0.05em;">Currently Feeling</span>
+                            <h3 th:text="${currentMoodOption.label} + ' &mdash; ' + ${currentMoodOption.subtitle}">Feeling</h3>
+                        </div>
+                        <a th:href="@{/(mood=null)} + '#mood-check-in'" class="mood-clear-btn">Clear Selection</a>
+                    </div>
+
+                    <div class="mood-tone-box">
+                        <p th:text="'&ldquo;' + ${currentMoodOption.toneDescription} + '&rdquo;'"></p>
+                    </div>
+
+                    <div class="mood-prompt-box">
+                        <h4>Gentle Reflection</h4>
+                        <p th:text="${currentMoodOption.reflectionPrompt}">Prompt text</p>
+                    </div>
+
+                    <div style="margin-top: 1.75rem;">
+                        <h4 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sage); margin-bottom: 0.75rem;">Small, Optional Steps for Right Now</h4>
+                        <div class="suggestions-grid">
+                            <div th:each="sug : ${currentMoodOption.gentleSuggestions}" class="suggestion-card">
+                                <div>
+                                    <h5 th:text="${sug.title}">Step Title</h5>
+                                    <p th:text="${sug.description}">Step Description</p>
+                                </div>
+                                <a th:if="${sug.actionLabel != null}" th:href="${sug.actionTarget}" th:text="${sug.actionLabel} + ' &rarr;'">Open Space</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mood-anchor-box">
+                        <p><strong>Quiet Anchor:</strong> <span th:text="${currentMoodOption.groundingReminder}">Reminder text</span></p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; font-size: 0.75rem; color: var(--color-charcoal-light); margin-top: 1.5rem;">
+                    This tool does not measure, score, or clinically diagnose depression, anxiety, or any psychiatric disorder.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Guided Breathing Space (PURE CSS ANIMATION - NO JAVASCRIPT) -->
+        <section id="breathing-space" class="breathing-section">
+            <div class="container">
+                <div class="section-tag">
+                    <span class="dot"></span>
+                    Somatic Calming Practice
+                </div>
+                <h2 class="section-title">Guided Breathing Space</h2>
+                <p class="section-subtitle">
+                    Regulate your autonomic nervous system using evidence-backed paced respiratory cycles. Grounded in clinical research on respiratory sinus arrhythmia and vagus nerve stimulation.
+                </p>
+
+                <div class="breathing-container">
+                    <!-- Pure CSS Breathing Animation Panel -->
+                    <div class="breathing-display-panel">
+                        <!-- Pure CSS Pause Control using Hidden Checkbox -->
+                        <input type="checkbox" id="pause-toggle" aria-label="Toggle breathing animation pause">
+
+                        <div class="breathing-ring-wrapper">
+                            <div class="breathing-ring-outer"></div>
+                            <div class="breathing-circle"
+                                 th:classappend="${selectedTechnique == '478'} ? 'anim-478' : (${selectedTechnique == 'equal'} ? 'anim-equal' : 'anim-box')">
+                                <span class="breathing-circle-text">Breathe</span>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 0.875rem; color: var(--color-charcoal-muted); margin-top: 0.5rem;">
+                            Follow the circle: expand with your inhale, soften with your exhale.
+                        </p>
+
+                        <!-- Pure CSS Label controlling checkbox -->
+                        <label for="pause-toggle" class="pause-btn-label">
+                            <span class="pause-text">&#9646;&#9646; Pause Animation</span>
+                            <span class="resume-text">&#9654; Resume Animation</span>
+                        </label>
+                    </div>
+
+                    <!-- Technique Selector and Instructions -->
+                    <div class="breathing-technique-card">
+                        <div class="technique-selector-tabs">
+                            <a th:each="tech : ${breathingTechniques}"
+                               th:href="@{/(technique=${tech.id})} + '#breathing-space'"
+                               th:text="${tech.name}"
+                               th:classappend="${selectedTechnique == tech.id} ? 'active' : ''"
+                               class="tech-tab-link">
+                                Technique
+                            </a>
+                        </div>
+
+                        <div class="technique-info-box" th:if="${currentTechnique != null}">
+                            <h3 th:text="${currentTechnique.name}">Technique Name</h3>
+                            <p th:text="${currentTechnique.description}">Description</p>
+
+                            <h4 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-muted-olive); margin-bottom: 0.5rem; letter-spacing: 0.05em;">Cycle Steps</h4>
+                            <ul class="phases-list">
+                                <li th:each="step, stat : ${currentTechnique.phaseInstructions}">
+                                    <span class="phase-number" th:text="${stat.count}">1</span>
+                                    <span th:text="${step}">Instruction</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Urgent Crisis Support / Get Help -->
+        <section id="urgent-support" class="urgent-section">
+            <div class="container">
+                <!-- High Contrast Emergency Notice -->
+                <div class="emergency-hero-box">
+                    <div class="emergency-hero-copy">
+                        <div class="emergency-hero-tag">Immediate Crisis Support</div>
+                        <h2>If You or Someone Around You is in Immediate Danger</h2>
+                        <p>
+                            Open Circle is an educational website and is <strong>not</strong> an emergency service or clinical medical facility. If someone is experiencing life-threatening harm, please contact your national emergency services or visit the nearest emergency room immediately.
+                        </p>
+                    </div>
+                    <div class="emergency-buttons-stack">
+                        <a href="tel:112" class="btn-emergency-call">Call 112 (India / EU Emergency)</a>
+                        <a href="tel:988" class="btn-emergency-988">Call / Text 988 (US / Canada)</a>
+                    </div>
+                </div>
+
+                <div class="section-tag">
+                    <span class="dot"></span>
+                    Verified Free Crisis Lines
+                </div>
+                <h3 class="section-title">National Helplines &amp; Crisis Directories</h3>
+                <p class="section-subtitle">
+                    Free, confidential, and official crisis lines operated by government health ministries and certified mental health networks. Select your region below to view verified contact methods.
+                </p>
+
+                <!-- Country Selector Tabs -->
+                <div class="country-tabs">
+                    <a th:each="hl : ${helplines}"
+                       th:href="@{/(country=${hl.id})} + '#urgent-support'"
+                       th:text="${hl.country}"
+                       th:classappend="${selectedCountry == hl.id} ? 'active' : ''"
+                       class="country-tab-link">
+                        Country
+                    </a>
+                </div>
+
+                <!-- Helpline Details Card -->
+                <div th:if="${currentHelpline != null}" class="helpline-detail-card">
+                    <div class="helpline-detail-header">
+                        <h3 th:text="${currentHelpline.serviceName}">Service Name</h3>
+                        <p class="helpline-gov" th:text="${currentHelpline.governingBody}">Governing Body</p>
+                    </div>
+
+                    <!-- Direct Numbers Grid -->
+                    <div class="helpline-numbers-grid" th:if="${!#lists.isEmpty(currentHelpline.numbers)}">
+                        <div th:each="num : ${currentHelpline.numbers}" class="helpline-number-card">
+                            <span class="helpline-num-type" th:text="${num.type}">Shortcode</span>
+                            <a th:href="${num.dial}" class="helpline-num-val" th:text="${num.display}">14416</a>
+                        </div>
+                    </div>
+
+                    <!-- Details Table -->
+                    <table class="helpline-info-table">
+                        <tbody>
+                            <tr>
+                                <td>Operating Hours</td>
+                                <td th:text="${currentHelpline.hours}">24/7</td>
+                            </tr>
+                            <tr>
+                                <td>Languages</td>
+                                <td th:text="${currentHelpline.languages}">English, Hindi, and regional languages</td>
+                            </tr>
+                            <tr>
+                                <td>Cost &amp; Access</td>
+                                <td th:text="${currentHelpline.cost}">Free &amp; Confidential</td>
+                            </tr>
+                            <tr>
+                                <td>Official Web Portal</td>
+                                <td><a th:href="${currentHelpline.officialUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--color-sage); text-decoration: underline;" th:text="${currentHelpline.officialUrl}">https://...</a></td>
+                            </tr>
+                            <tr>
+                                <td>Overview</td>
+                                <td th:text="${currentHelpline.description}">Description</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Immediate Actions -->
+                    <div class="immediate-actions-box">
+                        <h4>Immediate Guidance</h4>
+                        <ul>
+                            <li th:each="act : ${currentHelpline.immediateActions}" th:text="${act}">Action item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. About & Sources Section -->
+        <section id="about-sources">
+            <div class="container">
+                <div class="section-tag">
+                    <span class="dot"></span>
+                    About Open Circle &amp; Source Integrity
+                </div>
+                <h2 class="section-title">Honest Purpose, Academic Grounding</h2>
+                <p class="section-subtitle">
+                    Open Circle was conceived and built as an educational project to demonstrate how thoughtfully designed digital health tools can prioritize user dignity, factual accuracy, and strict privacy over commercial advertising or clickbait.
+                </p>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Why Open Circle Exists</h3>
+                        <p>Many mental health websites are cluttered with commercial ads, generic text, or unvetted claims. Open Circle demonstrates an editorial, human-centered alternative treating sensitive health topics with respect and care.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Evidence-Based Standards</h3>
+                        <p>Every psychoeducational guide is cross-referenced with public documents from the World Health Organization (WHO), National Health Service (NHS England), and National Institute of Mental Health (NIMH).</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>College Project Demonstration</h3>
+                        <p>Built with Java 21, Spring Boot, Maven, and Thymeleaf using pure HTML and CSS without client-side JavaScript. Showcases accessible design, semantic markup, and privacy safeguards.</p>
+                    </div>
+                </div>
+
+                <!-- Verified Institutional Citations Table -->
+                <div class="sources-list-table">
+                    <h3>Primary Institutional Citations</h3>
+                    <div class="source-item-row">
+                        <div class="source-name">
+                            <strong>World Health Organization (WHO)</strong>
+                            <span>United Nations Special Agency</span>
+                        </div>
+                        <div class="source-desc">
+                            Foundational definitions of mental health continuum and the Comprehensive Mental Health Action Plan.
+                        </div>
+                        <div>
+                            <a href="https://www.who.int/health-topics/mental-health" target="_blank" rel="noopener noreferrer" style="color: var(--color-sage); font-weight: 600; text-decoration: underline;">who.int &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="source-item-row">
+                        <div class="source-name">
+                            <strong>National Institute of Mental Health (NIMH)</strong>
+                            <span>National Institutes of Health (US)</span>
+                        </div>
+                        <div class="source-desc">
+                            Neurobiology of anxiety, diagnostic definitions of depression, and evidence-based psychotherapy modalities.
+                        </div>
+                        <div>
+                            <a href="https://www.nimh.nih.gov/health" target="_blank" rel="noopener noreferrer" style="color: var(--color-sage); font-weight: 600; text-decoration: underline;">nimh.nih.gov &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="source-item-row">
+                        <div class="source-name">
+                            <strong>National Health Service (NHS England)</strong>
+                            <span>Public Health System (UK)</span>
+                        </div>
+                        <div class="source-desc">
+                            The evidence-based '5 Steps to Mental Wellbeing' and 'Every Mind Matters' practical self-care guides.
+                        </div>
+                        <div>
+                            <a href="https://www.nhs.uk/mental-health/" target="_blank" rel="noopener noreferrer" style="color: var(--color-sage); font-weight: 600; text-decoration: underline;">nhs.uk &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="source-item-row">
+                        <div class="source-name">
+                            <strong>Tele-MANAS Initiative</strong>
+                            <span>Ministry of Health &amp; Family Welfare (Govt. of India)</span>
+                        </div>
+                        <div class="source-desc">
+                            India's national 24/7 digital tele-mental health counseling network operating nationwide under NIMHANS.
+                        </div>
+                        <div>
+                            <a href="https://telemanas.mohfw.gov.in/" target="_blank" rel="noopener noreferrer" style="color: var(--color-sage); font-weight: 600; text-decoration: underline;">telemanas.mohfw.gov.in &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact & Academic Inquiries -->
+        <section id="contact">
+            <div class="container">
+                <div style="text-align: center;">
+                    <div class="section-tag">
+                        <span class="dot"></span>
+                        Project Inquiries &amp; Feedback
+                    </div>
+                    <h2 class="section-title">Contact &amp; Academic Inquiries</h2>
+                    <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+                        Have questions about this educational project, feedback on accessibility, or a suggestion to correct a verified resource? Reach out directly below.
+                    </p>
+                </div>
+
+                <div class="contact-container">
+                    <!-- Demonstration Disclaimer Notice -->
+                    <div class="disclaimer-banner warning" style="margin-bottom: 1.75rem;">
+                        <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <div>
+                            <strong>Demonstration Notice:</strong> This contact form performs server-side Spring Boot Bean Validation. For academic evaluation or direct maintainer contact, email <strong>contact.opencircle@project.edu</strong>. <em>Do not use this form for urgent mental health crises&mdash;use our Get Help section.</em>
+                        </div>
+                    </div>
+
+                    <!-- Success Alert -->
+                    <div th:if="${contactSubmitted}" class="alert-success">
+                        <strong>Thank you, <span th:text="${contactSuccessName}">Friend</span>!</strong>
+                        Your inquiry has been received by the Open Circle project demonstration team.
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-card">
+                        <form th:action="@{/contact#contact}" th:object="${contactForm}" method="post">
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Your Name or Alias *</label>
+                                <input type="text" id="contact-name" th:field="*{name}" class="form-input" placeholder="e.g. Alex Sharma">
+                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="form-error">Name error</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">Email Address *</label>
+                                <input type="email" id="contact-email" th:field="*{email}" class="form-input" placeholder="name@example.com">
+                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="form-error">Email error</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-topic" class="form-label">Inquiry Subject</label>
+                                <select id="contact-topic" th:field="*{topic}" class="form-select">
+                                    <option value="general">General Feedback / College Project Inquiry</option>
+                                    <option value="resources">Suggest or Correct a Support Resource</option>
+                                    <option value="accessibility">Accessibility Feedback</option>
+                                    <option value="academic">Academic Evaluation Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label">Message *</label>
+                                <textarea id="contact-message" th:field="*{message}" class="form-textarea" placeholder="Please share your inquiry or suggestion (minimum 15 characters)..."></textarea>
+                                <span th:if="${#fields.hasErrors('message')}" th:errors="*{message}" class="form-error">Message error</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">
+                                Send Message (Demonstration)
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>Open Circle</h4>
+                    <p>
+                        An independent educational initiative created to offer human-centered mental health awareness, vetted support resources, and quiet reflection. Grounded in research from the WHO, NHS, and NIMH.
+                    </p>
+                    <p style="margin-top: 0.75rem; font-size: 0.75rem; color: #7E9689;">
+                        &bull; Pure HTML &amp; CSS Frontend &bull; Zero Tracking &bull; College Project Demonstration
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#learning-library">Learning Library</a></li>
+                        <li><a href="#support-directory">Support Directory</a></li>
+                        <li><a href="#mood-check-in">Mood Check-in</a></li>
+                        <li><a href="#breathing-space">Breathing Space</a></li>
+                        <li><a href="#urgent-support">Urgent Help</a></li>
+                        <li><a href="#about-sources">About &amp; Sources</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Emergency Lines</h5>
+                    <ul class="footer-links">
+                        <li><a href="tel:14416">India: 14416 (Tele-MANAS)</a></li>
+                        <li><a href="tel:112">India / EU Emergency: 112</a></li>
+                        <li><a href="tel:988">US &amp; Canada: 988</a></li>
+                        <li><a href="tel:111">UK: 111 (NHS)</a></li>
+                        <li><a href="https://findahelpline.com/" target="_blank" rel="noopener noreferrer">International Directory</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Open Circle Mental Health Platform. College Project Demonstration.</p>
+                <p>Not an emergency service. For acute distress, call local emergency services immediately.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

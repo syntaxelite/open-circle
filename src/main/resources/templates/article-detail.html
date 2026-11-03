@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${article.title} + ' — Open Circle Guide'">Article Title — Open Circle Guide</title>
+    <link rel="icon" th:href="@{/favicon.ico}" href="/favicon.ico">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip Link -->
+    <a href="#article-body" class="skip-link">Skip to article content</a>
+
+    <!-- Top Emergency Announcement Bar -->
+    <aside class="emergency-top-bar" aria-label="Urgent crisis helplines notice">
+        <span>In acute crisis? In India call Tele-MANAS <a href="tel:14416" class="helpline-link">14416</a> (24/7 Free) | In US/Canada dial <a href="tel:988" class="helpline-link">988</a></span>
+        <a th:href="@{/#urgent-support}" class="all-helpline-btn">View All Helplines &rarr;</a>
+    </aside>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-inner">
+            <a th:href="@{/}" class="brand-link" aria-label="Open Circle Homepage">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="16" cy="16" r="11" stroke="#315C50" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="56 16"/>
+                        <path d="M23 10C24.5 7.5 27 7 27 7C27 7 26.5 9.5 24 11C23 11.6 22.3 11.2 23 10Z" fill="#78917B"/>
+                        <circle cx="16" cy="16" r="3" fill="#E8CDA2"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Open Circle</span>
+            </a>
+
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/#learning-library}">Learning Library</a></li>
+                    <li><a th:href="@{/#support-directory}">Support Directory</a></li>
+                    <li><a th:href="@{/#mood-check-in}">Mood Check-in</a></li>
+                    <li><a th:href="@{/#breathing-space}">Breathing Space</a></li>
+                    <li><a th:href="@{/#urgent-support}" class="nav-btn-highlight">Get Help (24/7)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main id="article-body" class="article-detail-page">
+        <div class="container container-narrow">
+            <a th:href="@{/#learning-library}" class="back-link">
+                <span>&larr;</span>
+                <span>Back to Learning Library</span>
+            </a>
+
+            <article>
+                <header class="article-header-full">
+                    <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.75rem;">
+                        <span class="article-category-badge" th:text="${article.category}">Foundations</span>
+                        <span style="font-size: 0.8125rem; color: var(--color-charcoal-light);" th:text="${article.readTime}">5 min read</span>
+                    </div>
+
+                    <h1 th:text="${article.title}">Understanding Mental Health: More Than the Absence of Illness</h1>
+
+                    <p style="font-size: 1.15rem; color: var(--color-charcoal-muted); line-height: 1.6; margin-bottom: 1.5rem;"
+                       th:text="${article.summary}">
+                        Summary of the article.
+                    </p>
+
+                    <!-- Source Box -->
+                    <div class="article-source-tag" style="padding: 0.85rem 1rem;">
+                        <p>
+                            <strong>Academic &amp; Clinical Citation:</strong>
+                            <span th:text="${article.verifiedSource.name}">WHO Fact Sheet</span> &bull;
+                            <span th:text="${article.verifiedSource.publisher}">World Health Organization</span>
+                        </p>
+                        <p style="margin-top: 0.35rem; font-size: 0.75rem; color: var(--color-charcoal-light);">
+                            <span th:text="${article.verifiedSource.reviewDate}">Verified against published guidance</span> &bull;
+                            <a th:href="${article.verifiedSource.url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-sage); text-decoration: underline;">Open Verified Source Document &rarr;</a>
+                        </p>
+                    </div>
+                </header>
+
+                <!-- Key Takeaways -->
+                <div class="takeaways-box">
+                    <h3>Key Insights &amp; Takeaways</h3>
+                    <ul>
+                        <li th:each="takeaway : ${article.keyTakeaways}" th:text="${takeaway}">Takeaway point</li>
+                    </ul>
+                </div>
+
+                <!-- Sections -->
+                <div class="article-content-body">
+                    <section th:each="sec : ${article.sections}" class="article-section-block">
+                        <h2 th:text="${sec.title}">Section Title</h2>
+                        <p th:each="para : ${sec.content}" th:text="${para}">Paragraph content</p>
+                    </section>
+                </div>
+
+                <!-- Practical Micro-habit -->
+                <div class="practical-step-card" th:if="${article.practicalStep != null}">
+                    <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: #7A531C; letter-spacing: 0.05em;">Practical Micro-Habit</span>
+                    <h3 th:text="${article.practicalStep.title}">Daily Check-in Habit</h3>
+                    <p style="font-size: 0.875rem; color: var(--color-charcoal); line-height: 1.55;" th:text="${article.practicalStep.description}">Description</p>
+                </div>
+
+                <!-- Educational Disclaimer -->
+                <div class="disclaimer-banner" style="margin-top: 3rem;">
+                    <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <div>
+                        <strong>Safety Notice:</strong> Psychoeducational guides are for educational understanding and self-reflection only. If you are experiencing symptoms of acute distress or emotional crisis, please contact verified emergency helplines like Tele-MANAS (14416 in India) or 988 (in US/Canada).
+                    </div>
+                </div>
+
+                <!-- Related Guides -->
+                <div style="margin-top: 3.5rem; border-top: 1px solid var(--color-border-subtle); padding-top: 2rem;">
+                    <h3 style="font-size: 1.45rem; margin-bottom: 1.25rem;">More Educational Guides</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+                        <div th:each="recent : ${recentArticles}" class="article-card" style="padding: 1.25rem;">
+                            <span class="article-category-badge" style="align-self: flex-start; margin-bottom: 0.5rem;" th:text="${recent.category}">Category</span>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;" th:text="${recent.title}">Recent Title</h4>
+                            <a th:href="@{'/articles/' + ${recent.slug}}" class="read-guide-link">Read Guide &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Open Circle Mental Health Platform. College Project Demonstration.</p>
+                <p><a th:href="@{/}" style="color: var(--color-warm-beige); text-decoration: underline;">Return to Home Overview</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
