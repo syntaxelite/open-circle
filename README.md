@@ -72,7 +72,6 @@ D:\mental-health-backup
 │   │   │   ├── OpenCircleApplication.java         # Spring Boot application entry point
 │   │   │   ├── controller
 │   │   │   │   ├── HomeController.java            # Main endpoints, filtering, mood, contact POST
-│   │   │   │   └── ArticleController.java         # Full article reader view
 │   │   │   ├── model
 │   │   │   │   ├── Article.java                   # Article data model
 │   │   │   │   ├── ArticleSection.java            # Article section model
